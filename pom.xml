@@ -15,7 +15,7 @@
   <name>springboot</name>  
   <description>Demo project for Spring Boot</description>  
   <properties> 
-    <java.version>15</java.version>
+    <java.version>15</java.version> 
   </properties>  
   <dependencies> 
     <dependency> 
@@ -41,7 +41,31 @@
       <plugin> 
         <groupId>com.microsoft.azure</groupId>  
         <artifactId>azure-webapp-maven-plugin</artifactId>  
-        <version>1.13.0</version>
+        <version>1.13.0</version>  
+        <configuration> 
+          <!-- Specify v2 schema -->  
+          <schemaVersion>v2</schemaVersion>  
+          <!-- App information -->  
+          <authType>azure_cli</authType>  
+          <resourceGroup>azure_springboot</resourceGroup>  
+          <appName>vln-springbootazure-app</appName>  
+          <pricingTier>F1</pricingTier>  
+          <region>centralus</region>  
+          <runtime> 
+            <os>Linux</os>
+            <javaVersion>Java 11</javaVersion>  
+            <webContainer>Java SE</webContainer> 
+          </runtime>  
+          <appSettings> 
+            <property> 
+              <name>JAVA_OPTS</name>  
+              <value>-Dserver.port=80</value> 
+            </property> 
+          </appSettings>  
+          <deployment> 
+            <resources/> 
+          </deployment> 
+        </configuration> 
       </plugin> 
     </plugins> 
   </build> 

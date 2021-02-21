@@ -15,7 +15,7 @@ public class DummyDataService {
     @Autowired
     UserRepository userRepository;
 
-    @PostConstruct
+    //@PostConstruct
     public void createUsers(){
 
         userRepository.deleteAll()
