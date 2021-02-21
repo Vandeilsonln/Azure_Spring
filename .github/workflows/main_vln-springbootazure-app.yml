@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -28,5 +29,5 @@ jobs:
       with:
         app-name: 'vln-springbootazure-app'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_69e3bc60f6cc4e898523df43e911e920 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_df9390bae3cd434084a80c8f4b30ab75 }}
         package: '${{ github.workspace }}/target/*.jar'
